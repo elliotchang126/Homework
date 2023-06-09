@@ -1,7 +1,5 @@
 class Stack
 
-    attr_reader :stack
-
     def initialize
         @stack = []
 
@@ -16,7 +14,7 @@ class Stack
     end
 
     def peek
-        @stack[0]
+        @stack[-1]
     end
 
 
@@ -24,8 +22,6 @@ class Stack
 end
 
 class Queue
-
-    attr_reader :queue
 
     def initialize
         @queue = []
@@ -48,7 +44,6 @@ end
 
 class Map
 
-    attr_reader :my_map
     def initialize
         @my_map = []
     end
