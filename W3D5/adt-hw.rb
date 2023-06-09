@@ -48,21 +48,33 @@ end
 
 class Map
 
+    attr_reader :my_map
     def initialize
-        my_map = []
+        @my_map = []
     end
 
     def set(key, value)
-        
+        @my_map.each do |pair|
+            if pair[0] == key
+                pair[1] = value
+            else
+            my_map << [key, value]
+            end
+        end
     end
 
     def get(key)
+        @my_map.each do |pair|
+            return pair [1] if pair[0] == key
+        end
     end
 
     def delete(key)
+        value = get(key)
+        self.delete([key, value])
     end
 
     def show
-
+        my_map
     end
 end
