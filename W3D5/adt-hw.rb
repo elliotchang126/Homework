@@ -54,12 +54,19 @@ class Map
     end
 
     def set(key, value)
-        @my_map.each do |pair|
-            if pair[0] == key
-                pair[1] = value
-            else
+        # @my_map.each do |pair|
+        #     if pair[0] == key
+        #         pair[1] = value
+        #     else
+        # idx = 0
+        # @my_map.each_with_index do |pair, i|
+        #     if pair[0] == key
+        #         pair[1] = value
+        idx = @my_map.index { |pair| pair[0] == key}
+        if idx
+            @my_map[idx][1] = value
+        else
             my_map << [key, value]
-            end
         end
     end
 
