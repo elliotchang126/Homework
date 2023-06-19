@@ -67,7 +67,7 @@ class Map
 
     def get(key)
         @my_map.each do |pair|
-            return pair [1] if pair[0] == key
+            return pair[1] if pair[0] == key
         end
     end
 
