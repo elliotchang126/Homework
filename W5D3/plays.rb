@@ -20,7 +20,6 @@ class Play
   end
 
   def self.find_by_title(title)
-    raise "#{self} not in database" unless self.title
     play = PlayDBConnection.instance.execute(<<-SQL, title)
     SELECT
       *
@@ -29,10 +28,13 @@ class Play
     WHERE
       title = ?
     SQL
+    raise "#{self} not in database" unless play.length > 0
+
+    Play.new(play.first)
   end
 
   def self.find_by_playwright(name)
-
+    
   end
 
   def initialize(options)
