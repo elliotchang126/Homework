@@ -34,7 +34,7 @@ class Play
   end
 
   def self.find_by_playwright(name)
-    
+
   end
 
   def initialize(options)
@@ -65,5 +65,28 @@ class Play
       WHERE
         id = ?
     SQL
+  end
+end
+
+class Playright
+
+  attr_accessor :id, :name, :birth_year
+
+  def self.all
+    data = PlayDBConnection.instance.execute("SELECT * FROM playwrights")
+    data.map { |datum| Playwright.new(datum) }
+  end
+
+  def self.find_by_name(name)
+    person = PlayDBConnection.instance.execute(<<-SQL, name)
+    SELECT
+      *
+    FROM
+      playwrights
+    WHERE
+      name = ?
+    SQL
+    raise "#{self} not in database" unless playwright.length > 0
+    Playwright.new(person.first)
   end
 end
