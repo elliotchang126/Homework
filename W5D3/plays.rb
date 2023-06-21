@@ -68,7 +68,7 @@ class Play
   end
 end
 
-class Playright
+class Playwright
 
   attr_accessor :id, :name, :birth_year
 
@@ -107,4 +107,29 @@ class Playright
     self.id = PlayDBConnection.instance.last_insert_row_id
   end
 
+  def update
+    raise "#{self} not in database" unless self.id
+    PlayDBConnection.instance.exeecute(<<-SQL, self.name, self.birh_year, self.id)
+      UPDATE
+        playwrights
+      SET
+        name = ?. birth_year = ?
+      WHERE
+        id = ?
+    SQL
+  end
+
+  def get_plays
+    raise "#{self} not in database" unless self.id
+    plays = PlayDBConnection.instance.execute(<<-SQL, self.id)
+      SELECT
+        *
+      FROM
+        plays
+      WHERE
+        playwright_id = ?
+    SQL
+
+    plays.map { |play| Play.new(play) }
+  end
 end
