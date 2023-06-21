@@ -98,7 +98,7 @@ class Playwright
     WHERE
       name = ?
     SQL
-    raise "#{self} not in database" unless playwright.length > 0
+    raise "#{self} not in database" unless person.length > 0
     Playwright.new(person.first)
   end
 
