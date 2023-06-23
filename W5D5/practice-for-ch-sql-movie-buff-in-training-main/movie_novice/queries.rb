@@ -57,7 +57,7 @@ def alphabetized_actors
   # display the id and name of the second 10 actor names (i.e., #s 11-20)
   # when ordered from A-Z
   # hint: use 'order' and 'limit'
-  
+    Actor.select(:id, :name).order('name ASC').limit(10).offset(10)
 end
 
 def pulp_fiction_actors
