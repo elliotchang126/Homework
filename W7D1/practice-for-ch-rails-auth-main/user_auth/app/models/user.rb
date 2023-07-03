@@ -49,6 +49,11 @@ class User < ApplicationRecord
             session_token = SecureRandom::urlsafe_base64(16)
             return session_token unless User.exists?(session_token: session_token)
         end
+        #token = SecureRandom::urlsafe_base64
+        #while User.exists?(session_token: token)
+        #token = SecureRandom::urlsafe_base64
+        # end
+        # token
     end
 
     def ensure_session_token
