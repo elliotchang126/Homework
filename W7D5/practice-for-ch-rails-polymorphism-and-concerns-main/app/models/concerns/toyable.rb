@@ -1,0 +1,13 @@
+class Toyable
+    extend ActiveSupport::Concern
+
+    included do
+        has_many :toys,
+            as: :toyable,
+            dependent: :destroy
+    end
+
+    def receive_toy(name)
+        
+    end
+end

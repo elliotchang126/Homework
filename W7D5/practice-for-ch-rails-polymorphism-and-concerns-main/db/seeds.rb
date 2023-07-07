@@ -24,6 +24,11 @@ ApplicationRecord.transaction do
   cat2 = Cat.create!(name: "Garfield")
   corgi1 = Corgi.create!(name: "Shelly")
   corgi2 = Corgi.create!(name: "Prisca")
+  Toy.create!(name: "ball", toyable: cat1)
+  Toy.create!(name: "ball", toyable: corgi1)
+  Toy.create!(name: "stick", toyable: corgi2)
+  Toy.create!(name: "mouse", toyable: cat1)
+  Toy.create!(name: "yarn-ball", toyable: cat2)
 
   puts "Done!"
 end
