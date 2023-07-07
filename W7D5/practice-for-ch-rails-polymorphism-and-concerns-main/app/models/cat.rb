@@ -8,5 +8,7 @@
 #  updated_at :datetime         not null
 #
 class Cat < ApplicationRecord
-  validates :name, presence: true   
+  validates :name, presence: true
+
+  include Toyable
 end
