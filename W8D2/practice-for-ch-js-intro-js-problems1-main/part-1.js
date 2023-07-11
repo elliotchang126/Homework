@@ -7,7 +7,7 @@ function mysteryScoping1() {
     console.log(x);
   }
 
-  mysteryScoping1();
+//   mysteryScoping1();
 
   function mysteryScoping2() {
     const x = 'out of block';
@@ -18,7 +18,7 @@ function mysteryScoping1() {
     console.log(x);
   }
   
-  mysteryScoping2();
+//   mysteryScoping2();
 
   function mysteryScoping3() {
     const x = 'out of block';
@@ -29,7 +29,7 @@ function mysteryScoping1() {
     console.log(x);
   }
   
-  mysteryScoping3();
+//   mysteryScoping3();
 
   function mysteryScoping4() {
     let x = 'out of block';
@@ -40,7 +40,7 @@ function mysteryScoping1() {
     console.log(x);
   }
   
-  mysteryScoping4();
+//   mysteryScoping4();
 
   function mysteryScoping5() {
     let x = 'out of block';
@@ -52,13 +52,13 @@ function mysteryScoping1() {
     console.log(x);
 }
 
-mysteryScoping5();
+// mysteryScoping5();
 
 function madLib(verb, adj, noun) {
     console.log(`We shall ${verb.toUpperCase()} the ${adj.toUpperCase()} ${noun.toUpperCase()}.`);
 }
 
-madLib('make', 'best', 'guac');
+// madLib('make', 'best', 'guac');
 
 function isSubstring(phrase, sub) {
     return phrase.includes(sub);
