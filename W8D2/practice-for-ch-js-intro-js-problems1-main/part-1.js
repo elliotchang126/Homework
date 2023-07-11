@@ -60,3 +60,7 @@
 
 // madLib('make', 'best', 'guac');
 
+function isSubstring(phrase, sub) {
+    return phrase.includes(sub);
+}
+
