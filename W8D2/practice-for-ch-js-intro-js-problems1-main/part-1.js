@@ -64,3 +64,28 @@ function isSubstring(phrase, sub) {
     return phrase.includes(sub);
 }
 
+function fizzBuzz(array) {
+    let fbArr = []
+    array.forEach(el => {
+        if ((el % 3 === 0) || (el % 5 === 0)) {
+            fbArr.push(el);
+        }
+    });
+    return fbArr;
+}
+
+function isPrime(num) {
+    if (num < 2) { return false; }
+
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+function sumOfNPrimes(n) {
+    let sum = 0
+    
+}
